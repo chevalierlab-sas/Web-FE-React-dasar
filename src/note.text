@@ -1,0 +1,35 @@
+import { useState } from 'react';
+
+function Greeting(props) {
+  return <h1>Hi namaku, {props.name}</h1>;
+}
+
+function Button(props) {
+  return (
+    <button
+      className="bg-blue-400 p-2 text-white rounded-sm hover:bg-blue-700"
+      onClick={props.onClick}
+    >
+      klik saya!!
+    </button>
+  );
+}
+
+function App() {
+  const [buttonClicked, setButtonClicked] = useState(false);
+
+  const handleButtonClick = () => {
+    setButtonClicked(true);
+  };
+
+  return (
+    <div className="App">
+      <div className="text-center font-bold">Hallo from tailwindcss</div>
+      <Greeting name="deva" />
+      <Button onClick={handleButtonClick} />
+      {buttonClicked && <p>Button telah diklik!</p>}
+    </div>
+  );
+}
+
+export default App;

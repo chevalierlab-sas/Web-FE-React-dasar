@@ -1,13 +1,31 @@
-import React from 'react'
-import NoteItems from './NoteItems'
+import React, { useEffect, useState } from "react";
+import { getInitialData } from "../utils";
 
-function ActiveNote() {
+const ActiveNote = () => {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+      const fetchData = async () => {
+        const initialData = await getInitialData();
+        setData(initialData);
+      };
+  
+      fetchData();
+    }, []);
+
   return (
     <div>
-    <h2 className="card-title p-4 font-semibold">Catatan Aktif</h2>
-      <NoteItems />
+      <h2>Catatan Aktif</h2>
+     <div>
+     {data.map((item) => (
+        <div key={item.id}>
+          <h3>{item.title}</h3>
+          <p>{item.body}</p>
+        </div>
+      ))}
+     </div>
     </div>
-  )
-}
+  );
+};
 
-export default ActiveNote
+export default ActiveNote;

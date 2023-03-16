@@ -3,7 +3,7 @@ import React from "react";
 function AddNote() {
   return (
     <div>
-      <div className="card w-auto bg-base-100 shadow-xl mx-auto my-4 shadow-md">
+      <div className="card w-auto bg-base-100 shadow-xl mx-auto my-4">
           <h2 className="card-title p-4 font-semibold">Buat Catatan</h2>
         <div className="card-body p-4">
           <form className="form-control">

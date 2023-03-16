@@ -1,8 +1,12 @@
 import React from 'react'
+import NoteItems from './NoteItems'
 
 function ActiveNote() {
   return (
-    <div>ActiveNote</div>
+    <div>
+    <h2 className="card-title p-4 font-semibold">Catatan Aktif</h2>
+      <NoteItems />
+    </div>
   )
 }
 

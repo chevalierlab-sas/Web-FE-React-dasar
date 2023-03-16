@@ -8,13 +8,15 @@ import Navbar from "./Navbar";
 function NotesApp() {    
 
   return (
-    <div className="container mx-auto">
+    <>
+    <div className="container mx-auto my-4">
       <Navbar />
       <AddNote />
-      <ActiveNote/>
+      <ActiveNote />
       <ArchiveNote />
-      <Footer />
     </div>
+    <Footer/>
+    </>
   );
 }
 
